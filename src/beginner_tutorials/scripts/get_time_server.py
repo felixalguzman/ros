@@ -8,10 +8,15 @@ import rospy
 import time
 
 
-def handle_add_two_ints(req : GetTimeRequest):
+def handle_add_two_ints(req : GetTimeRequest = None):
+    format : str = rospy.get_param('format', r'%D %X')
+
     converted = time.localtime(rospy.Time.now().secs)
-    formatted = time.strftime( req.format, converted)
+    formatted = time.strftime( format, converted)
     return GetTimeResponse(formatted)
+
+
+    
 
 def add_two_ints_server():
     rospy.init_node('get_time_server')
