@@ -1,3 +1,4 @@
 {
-  "cmake.sourceDirectory": "${workspaceFolder}/src/beginner_tutorials"
+  "cmake.sourceDirectory": "${workspaceFolder}/src/beginner_tutorials",
+  "python.formatting.provider": "black"
 }
